@@ -1,19 +1,47 @@
-import React, { useState } from "react";
+import React from "react";
+import { useState } from "react";
+
+let nextId = 0;
 
 function TodoForm() {
-  const [input, setInput] = useState("");
+  const [inputList, setInputList] = useState("");
+  const [task, setTask] = useState([]);
+
+  const handleChange = (e) => {
+    setInputList(e.target.value);
+  };
+
+  const handleClick = () => {
+    setInputList("");
+    setTask([...task, { id: nextId++, inputList: inputList }]);
+  };
+
   return (
-    <form className="todo-form">
+    <>
       <input
         type="text"
         placeholder="Enter Title"
-        value={input}
-        name="text"
         className="todo-input"
+        value={inputList}
+        onChange={handleChange}
       />
-      <br />
-      <button className="todo-button">Add</button>
-    </form>
+      <button onClick={handleClick}>Add</button>
+      <ul>
+        {task.map((t) => (
+          <li key={t.id}>
+            {t.inputList}
+            {""}
+            <button
+              onClick={() => {
+                setTask(task.filter((a) => a.id !== t.id));
+              }}
+            >
+              x
+            </button>
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }
 
