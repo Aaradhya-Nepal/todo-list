@@ -2,7 +2,6 @@ import React from "react";
 import "./App.css"; 
 import Banner from "./components/Banner";
 import TodoForm from "./components/TodoForm";
-import TodoList from "./components/TodoList";
 
 function App() {
   return (
@@ -10,7 +9,6 @@ function App() {
      <div>
       <Banner/>
       <TodoForm/>
-      <TodoList/>
      </div>
     </>
   );
