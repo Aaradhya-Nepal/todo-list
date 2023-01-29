@@ -53,8 +53,10 @@ function TodoForm() {
   };
 
   const handleUpdate = () => {
-    let nextTasks = tasks.filter((a) => a.id !== task.id);
-    setTasks([...nextTasks, task]);
+    let nextTasks = [...tasks.filter((t) => t.id !== task.id), task];
+    nextTasks.sort((t1, t2) => (t1.id > t2.id) ? 1 : (t1.id < t2.id) ? -1 : 0);
+    // https://www.scaler.com/topics/javascript-sort-an-array-of-objects/
+    setTasks(nextTasks);
     handleCancel();
   };
 
