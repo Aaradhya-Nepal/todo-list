@@ -15,26 +15,16 @@ function TodoForm() {
   };
 
   const getNextId = () => {
-    if (tasks.length > 0) {
-      let maxId = Math.max(...tasks.map((t) => t.id));
-      console.log(maxId);
-      return maxId + 1;
-    } else {
-      return 0;
-    }
+    let maxId = Math.max(...tasks.map((t) => t.id));
+    return maxId + 1;
   };
 
   const handleAdd = () => {
-    let nextId = getNextId();
-    console.log(task);
-    let ts = [...tasks, task];
-    setTasks(ts);
+    setTasks([...tasks, task]);
     setTask({
       ...emptyTask,
-      id: nextId,
+      id: task.id + 1,
     });
-    console.log(nextId);
-    console.log(ts);
   };
 
   const handleDelete = (t) => {
