@@ -6,6 +6,7 @@ function TodoForm() {
   const [task, setTask] = useState(emptyTask);
   const [tasks, setTasks] = useState([]);
   const [editMode, setEditMode] = useState(false);
+  const [line, setLine] = useState(false);
 
   const handleChange = (e) => {
     setTask({
@@ -68,6 +69,10 @@ function TodoForm() {
     setEditMode(false);
   };
 
+  const strike = () => {
+    setLine(true);
+  };
+
   return (
     <>
       <input
@@ -89,7 +94,11 @@ function TodoForm() {
       <ul>
         {tasks &&
           tasks.map((t) => (
-            <li key={t.id}>
+            <li
+              style={{ textDecoration: line ? "line-through" : "none" }}
+              key={t.id}
+            >
+              <button onClick={strike}>Complete</button>
               {t.name}
               <button
                 onClick={(e) => {
