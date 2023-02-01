@@ -1,12 +1,12 @@
 import React from "react";
 import { useState } from "react";
+import List from "./List";
 
 function TodoForm() {
   const emptyTask = { id: 0, name: "" };
   const [task, setTask] = useState(emptyTask);
   const [tasks, setTasks] = useState([]);
   const [editMode, setEditMode] = useState(false);
-  const [line, setLine] = useState(false);
 
   const handleChange = (e) => {
     setTask({
@@ -56,7 +56,6 @@ function TodoForm() {
   const handleUpdate = () => {
     let nextTasks = [...tasks.filter((t) => t.id !== task.id), task];
     nextTasks.sort((t1, t2) => (t1.id > t2.id ? 1 : t1.id < t2.id ? -1 : 0));
-    // https://www.scaler.com/topics/javascript-sort-an-array-of-objects/
     setTasks(nextTasks);
     handleCancel();
   };
@@ -67,10 +66,6 @@ function TodoForm() {
       id: getNextId(),
     });
     setEditMode(false);
-  };
-
-  const strike = () => {
-    setLine(true);
   };
 
   return (
@@ -94,12 +89,8 @@ function TodoForm() {
       <ul>
         {tasks &&
           tasks.map((t) => (
-            <li
-              style={{ textDecoration: line ? "line-through" : "none" }}
-              key={t.id}
-            >
-              <button onClick={strike}>Complete</button>
-              {t.name}
+            <div key={t.id}>
+              <List id={t.id} text={t.name} />
               <button
                 onClick={(e) => {
                   handleEdit(t);
@@ -114,7 +105,7 @@ function TodoForm() {
               >
                 Delete
               </button>
-            </li>
+            </div>
           ))}
       </ul>
     </>
