@@ -1,9 +1,9 @@
 import React from "react";
 import { useState } from "react";
-import List from "./List";
+import Task from "./Task";
 
 function TodoForm() {
-  const emptyTask = { id: 0, name: "" };
+  const emptyTask = { id: 0, name: "", complete: false };
   const [task, setTask] = useState(emptyTask);
   const [tasks, setTasks] = useState([]);
   const [editMode, setEditMode] = useState(false);
@@ -68,6 +68,16 @@ function TodoForm() {
     setEditMode(false);
   };
 
+  const handleComplete = (id) => {
+    let cTasks = tasks.find((a) => a.id === id);
+    let nextTasks = [
+      ...tasks.filter((t) => t.id !== id),
+      { ...cTasks, complete: !cTasks.complete },
+    ];
+    nextTasks.sort((t1, t2) => (t1.id > t2.id ? 1 : t1.id < t2.id ? -1 : 0));
+    setTasks(nextTasks);
+  };
+
   return (
     <>
       <input
@@ -89,23 +99,12 @@ function TodoForm() {
       <ul>
         {tasks &&
           tasks.map((t) => (
-            <div key={t.id}>
-              <List id={t.id} text={t.name} />
-              <button
-                onClick={(e) => {
-                  handleEdit(t);
-                }}
-              >
-                Edit
-              </button>
-              <button
-                onClick={(e) => {
-                  handleDelete(t);
-                }}
-              >
-                Delete
-              </button>
-            </div>
+            <Task
+              task={t}
+              onEdit={handleEdit}
+              onDelete={handleDelete}
+              key={t.id}
+            />
           ))}
       </ul>
     </>
