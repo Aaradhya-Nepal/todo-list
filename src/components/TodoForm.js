@@ -3,7 +3,7 @@ import { useState } from "react";
 import Task from "./Task";
 
 function TodoForm() {
-  const emptyTask = { id: 0, name: "", complete: false };
+  const emptyTask = { id: 0, name: "", description: "", complete: false };
   const [task, setTask] = useState(emptyTask);
   const [tasks, setTasks] = useState([]);
   const [editMode, setEditMode] = useState(false);
@@ -15,9 +15,11 @@ function TodoForm() {
     });
   };
 
-  const getNextId = () => {
-    let maxId = Math.max(...tasks.map((t) => t.id));
-    return maxId + 1;
+  const handleDescriptionChange = (e) => {
+    setTask({
+      ...task,
+      description: e.target.value,
+    });
   };
 
   const handleAdd = () => {
@@ -26,6 +28,11 @@ function TodoForm() {
       ...emptyTask,
       id: task.id + 1,
     });
+  };
+
+  const getNextId = () => {
+    let maxId = Math.max(...tasks.map((t) => t.id));
+    return maxId + 1;
   };
 
   const handleDelete = (t) => {
@@ -68,24 +75,29 @@ function TodoForm() {
     setEditMode(false);
   };
 
-  const handleComplete = (id) => {
-    let cTasks = tasks.find((a) => a.id === id);
-    let nextTasks = [
-      ...tasks.filter((t) => t.id !== id),
-      { ...cTasks, complete: !cTasks.complete },
-    ];
-    nextTasks.sort((t1, t2) => (t1.id > t2.id ? 1 : t1.id < t2.id ? -1 : 0));
-    setTasks(nextTasks);
-  };
+  // const handleComplete = (id) => {
+  //   let cTasks = tasks.find((a) => a.id === id);
+  //   let nextTasks = [
+  //     ...tasks.filter((t) => t.id !== id),
+  //     { ...cTasks, complete: !cTasks.complete },
+  //   ];
+  //   nextTasks.sort((t1, t2) => (t1.id > t2.id ? 1 : t1.id < t2.id ? -1 : 0));
+  //   setTasks(nextTasks);
+  // };
 
   return (
     <>
       <input
         type="text"
         placeholder="Enter Title"
-        className="todo-input"
         value={task.name}
         onChange={handleChange}
+      />
+      <input
+        type="text"
+        placeholder="Describe the task"
+        value={task.description}
+        onChange={handleDescriptionChange}
       />
       {!editMode ? (
         <button onClick={handleAdd}>Add</button>
@@ -99,12 +111,15 @@ function TodoForm() {
       <ul>
         {tasks &&
           tasks.map((t) => (
-            <Task
-              task={t}
-              onEdit={handleEdit}
-              onDelete={handleDelete}
-              key={t.id}
-            />
+            <>
+              <Task
+              
+                task={t}
+                onEdit={handleEdit}
+                onDelete={handleDelete}
+                key={t.id}
+              />
+            </>
           ))}
       </ul>
     </>

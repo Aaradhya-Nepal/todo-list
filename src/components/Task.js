@@ -17,6 +17,8 @@ const Task = (props) => {
       <div key={task.id}>
         <li style={{ textDecoration: task.complete ? "line-through" : null }}>
           {task.name}
+          <br />
+          {task.description}
         </li>
         <button
           onClick={(e) => {
