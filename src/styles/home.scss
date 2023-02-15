@@ -4,7 +4,6 @@
 }
 
 .todo-container {
-
   .todo-header {
     display: flex;
     flex-direction: row;
@@ -18,7 +17,6 @@
       align-items: flex-start;
       padding: 0;
       gap: 0.25rem;
-
 
       .header-title-text {
         width: max-content;
@@ -80,7 +78,7 @@
         .task-complete-checkbox {
           height: 0.8rem;
           width: 0.8rem;
-          border: 2px solid #BBBBBB;
+          border: 2px solid #bbbbbb;
           border-radius: 25%;
           display: flex;
           align-items: center;
@@ -93,7 +91,6 @@
             background-color: #4192f1;
           }
         }
-
       }
 
       .task-body {
@@ -149,21 +146,18 @@
               align-items: center;
               color: #027aff;
             }
-
           }
         }
-
-
       }
     }
     .task-actions {
       display: flex;
       align-items: center;
+      color: #c2c2c2;
 
       &.active {
         color: #1e77db;
       }
     }
-
   }
 }

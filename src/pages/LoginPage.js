@@ -19,12 +19,8 @@ const LoginPage = () => {
             <div className="login-input-field">
               <form>
                 <div className="login-email">
-                  <label className="email-label">Email</label>
-                  <input
-                    type="email"
-                    placeholder="example@mail.com"
-                    className="email-input"
-                  />
+                  <label>Email</label>
+                  <input type="email" placeholder="example@mail.com" />
                 </div>
                 <div className="login-password">
                   <label>Password</label>
@@ -47,9 +43,9 @@ const LoginPage = () => {
             </div>
           </div>
           <div className="login-footer">
-            <hr className="line-2" />
-            <div className="login-footer-text">
-              <div className="footer-text">
+            <div className="signup-instead">
+              <hr className="line-2" />
+              <div className="login-footer-text">
                 <p>Don't have an account?</p>
                 <a href="/#">Sign up</a>
               </div>
