@@ -1,9 +1,9 @@
 import React from "react";
 import { IoIosAdd } from "react-icons/io";
 import { AiTwotoneStar } from "react-icons/ai";
-import "../styles/home.scss";
 import { RxDotFilled } from "react-icons/rx";
 import NavBar from "../components/NavBar";
+import "../styles/home.scss";
 
 const data = [
   {
@@ -12,7 +12,7 @@ const data = [
     category: "GoPay",
     subtasks: {
       total: 4,
-      completed: 0
+      completed: 0,
     },
     date: "Today",
     favourite: false,
@@ -23,7 +23,7 @@ const data = [
     category: "Personal",
     subtasks: {
       total: 4,
-      completed: 1
+      completed: 1,
     },
     date: "Today",
     favourite: true,
@@ -34,13 +34,12 @@ const data = [
     category: "Kretya Studio",
     subtasks: {
       total: 3,
-      completed: 2
+      completed: 2,
     },
     date: "Wednesday, Dec 28",
     favourite: false,
-  }
-]
-
+  },
+];
 
 const HomePage = () => {
   return (
@@ -63,38 +62,36 @@ const HomePage = () => {
             </div>
           </div>
           <ul className="tasks">
-            {
-              data.map(task => (
-                  <li key={task.id} className="task">
-                    <div className="task-body">
-                      <div className="task-complete">
-                        <div className="task-complete-checkbox">
-                          {/*<div className="checked"></div>*/}
-                        </div>
-                      </div>
-                      <div className="task-content">
-                        <div className="task-title">
-                          {task.title}
-                        </div>
-                        <div className="task-category">
-                          <div className="task-category-title">{task.category}</div>
-                          <div className="task-category-separator">
-                            <RxDotFilled className="dot" />
-                          </div>
-                          <div className="task-subtasks-count">{task.subtasks.completed} of {task.subtasks.total}</div>
-                          <div className="task-category-separator">
-                            <RxDotFilled className="dot" />
-                          </div>
-                          <div className="task-category-date">{task.date}</div>
-                        </div>
-                      </div>
+            {data.map((task) => (
+              <li key={task.id} className="task">
+                <div className="task-body">
+                  <div className="task-complete">
+                    <div className="task-complete-checkbox">
+                      {/*<div className="checked"></div>*/}
                     </div>
-                    <div className={"task-actions " + (task.favourite && "active")}>
-                      <AiTwotoneStar />
+                  </div>
+                  <div className="task-content">
+                    <div className="task-title">{task.title}</div>
+                    <div className="task-category">
+                      <div className="task-category-title">{task.category}</div>
+                      <div className="task-category-separator">
+                        <RxDotFilled className="dot" />
+                      </div>
+                      <div className="task-subtasks-count">
+                        {task.subtasks.completed} of {task.subtasks.total}
+                      </div>
+                      <div className="task-category-separator">
+                        <RxDotFilled className="dot" />
+                      </div>
+                      <div className="task-category-date">{task.date}</div>
                     </div>
-                  </li>
-              ))
-            }
+                  </div>
+                </div>
+                <div className={"task-actions " + (task.favourite && "active")}>
+                  <AiTwotoneStar />
+                </div>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
