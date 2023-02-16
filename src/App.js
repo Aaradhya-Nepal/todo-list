@@ -4,12 +4,14 @@ import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import TodoForm from "./components/TodoForm";
+import HamburgerMenu from "./components/HamburgerMenu";
 
 function App() {
   return (
     <>
       <div>
-        <HomePage />
+        {/* <HomePage /> */}
+        <HamburgerMenu />
         {/* <SignupPage /> */}
         {/* <LoginPage/> */}
         {/* <TodoForm /> */}
