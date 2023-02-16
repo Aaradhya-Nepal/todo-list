@@ -5,13 +5,14 @@ import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import TodoForm from "./components/TodoForm";
 import HamburgerMenu from "./components/HamburgerMenu";
-
+import CreateNewTask from "./components/CreateNewTask";
 function App() {
   return (
     <>
       <div>
+        <CreateNewTask />
         {/* <HomePage /> */}
-        <HamburgerMenu />
+        {/* <HamburgerMenu /> */}
         {/* <SignupPage /> */}
         {/* <LoginPage/> */}
         {/* <TodoForm /> */}

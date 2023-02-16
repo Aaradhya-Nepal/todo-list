@@ -1,6 +1,6 @@
 import React from "react";
 import { FcGoogle } from "react-icons/fc";
-import "../styles/googlesignup.scss";
+import "../styles/googleSignup.scss";
 
 const GoogleSignupButton = () => {
   return (
