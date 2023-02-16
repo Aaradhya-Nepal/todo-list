@@ -36,8 +36,11 @@ const HamburgerMenu = () => {
           </div>
           <div className="user-profile">
             <div className="user-details">
-              <div className="user-picture-profile">
-                profile here
+              <div className="user-profile-picture">
+                <img
+                  src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
+                  alt=""
+                />
               </div>
               <div className="user-credentials">
                 <div className="user-name">John Doe</div>
@@ -53,7 +56,16 @@ const HamburgerMenu = () => {
               <p>Favourites</p>
             </div>
             <div className="menu-favourite-categories">
-              <div className="categories">
+              <div className="category">
+                <div className="category-name">
+                  <BsLightningCharge size={24} className="category-icon" />
+                  <p>Assigned to me</p>
+                </div>
+                <div className="category-task-count">
+                  <p>8</p>
+                </div>
+              </div>
+              <div className="category">
                 <div className="category-name">
                   <BsLightningCharge size={24} className="category-icon" />
                   <p>Assigned to me</p>
