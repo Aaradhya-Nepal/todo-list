@@ -130,7 +130,7 @@
     border: 1px solid #bebebe;
     margin-bottom: 1rem;
   }
-  .footer-date-category {
+  .footer-date-and-category {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -142,5 +142,19 @@
 
     background: #eaeaea;
     border-radius: 10px;
+
+    .footer-due-date {
+      display: flex;
+      // flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px;
+
+      width: inherit;
+
+      font-weight: 600;
+      font-size: 14px;
+      color: #7f7f7f;
+    }
   }
 }

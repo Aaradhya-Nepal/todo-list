@@ -1,5 +1,6 @@
 import React from "react";
 import { IoIosAdd } from "react-icons/io";
+import MyDatePicker from "../CalendarComponent/MyDatePicker";
 import "../styles/createTask.scss";
 import CloseIcon from "./CloseIcon";
 
@@ -33,11 +34,11 @@ const CreateNewTask = () => {
           </div>
           <div className="footer-container">
             <hr className="line" />
-            <div className="footer-date-category">
+            <div className="footer-date-and-category">
               <div className="footer-due-date">
                 <p>Due date</p>
                 <div className="choose-a-date">
-                  <input type="date" />
+                  <MyDatePicker/>
                 </div>
               </div>
               <div className="footer-category">

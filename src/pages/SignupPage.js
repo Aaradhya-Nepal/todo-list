@@ -41,9 +41,9 @@ const SignupPage = () => {
               <button type="button">Sign up</button>
             </div>
           </div>
+          <hr className="line-2" />
           <div className="signup-footer">
             <div className="login-instead">
-              <hr className="line-2" />
               <div className="signup-footer-text">
                 <p>Already have an account?</p>
                 <a href="/#">Log in</a>
