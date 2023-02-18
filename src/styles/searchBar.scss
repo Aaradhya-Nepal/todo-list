@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+
+  margin-bottom: 1rem;
+
+  font-weight: 600;
+  font-size: 25px;
+}
+.search-bar {
+  display: flex;
+  flex-direction: column;
+
+  input {
+    padding: 10px;
+    margin-bottom: 0.2rem;
+
+    background: #efefef;
+    border-radius: 3px;
+    border-width: 0;
+
+    font-weight: 600;
+    font-size: 14px;
+    color: #000000;
+  }
+  ::placeholder {
+    color: #939393;
+  }
+  p {
+    font-weight: 400;
+    font-size: 11px;
+    color: #939393;
+  }
+}

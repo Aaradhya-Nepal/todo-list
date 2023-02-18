@@ -6,13 +6,17 @@ import SignupPage from "./pages/SignupPage";
 import TodoForm from "./components/TodoForm";
 import HamburgerMenu from "./components/HamburgerMenu";
 import CreateNewTask from "./components/CreateNewTask";
+import EditTask from "./components/EditTask";
+import Search from "./components/Search";
 function App() {
   return (
     <>
       <div>
-        <CreateNewTask />
+        {/* <Search/> */}
+        {/* <EditTask/> */}
+        {/* <CreateNewTask /> */}
         {/* <HomePage /> */}
-        {/* <HamburgerMenu /> */}
+        <HamburgerMenu />
         {/* <SignupPage /> */}
         {/* <LoginPage/> */}
         {/* <TodoForm /> */}

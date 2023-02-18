@@ -3,14 +3,14 @@ import { IoIosAdd } from "react-icons/io";
 import "../styles/createTask.scss";
 import CloseIcon from "./CloseIcon";
 
-const CreateNewTask = () => {
+const EditTask = () => {
   return (
     <>
       <div className="main-container">
         <div className="create-task-container">
           <div className="header-and-body-container">
             <div className="header">
-              <p>Create new task</p>
+              <p>Edit task</p>
               <CloseIcon />
             </div>
             <div className="input-field">
@@ -61,4 +61,4 @@ const CreateNewTask = () => {
   );
 };
 
-export default CreateNewTask;
+export default EditTask;

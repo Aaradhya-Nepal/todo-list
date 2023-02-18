@@ -48,6 +48,9 @@
 
         font-weight: 400;
         font-size: 18px;
+        color: #000000;
+      }
+      ::placeholder {
         color: #939393;
       }
     }
@@ -62,12 +65,12 @@
         font-size: 15px;
         color: #939393;
       }
-      input {
+      textarea {
         box-sizing: border-box;
         display: flex;
         flex-direction: row;
         align-items: flex-start;
-        padding: 12px 17px;
+        padding: 12px;
 
         width: 100%;
         height: 6.25rem;
@@ -76,8 +79,11 @@
         border: 1px solid #cecece;
         border-radius: 8px;
 
-        font-weight: 600;
+        font-weight: 400;
         font-size: 18px;
+        color: #000000;
+      }
+      ::placeholder {
         color: #939393;
       }
     }
@@ -112,9 +118,12 @@
         border: hidden;
         outline: none;
 
-        font-weight: 600;
+        font-weight: 400;
         font-size: 14px;
         color: #000000;
+      }
+      ::placeholder {
+        color: #939393;
       }
     }
   }
@@ -141,21 +150,32 @@
     // width: 100%;
     // height: fit-content;
 
-    background: #eaeaea;
+    background: #f6f8fa;
     border-radius: 10px;
 
     .footer-due-date {
-      // display: flex;
-      // flex-direction: row;
+      display: flex;
+      flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      padding: 0px;
 
       width: 100%;
 
       font-weight: 600;
       font-size: 14px;
       color: #7f7f7f;
+
+      input {
+        padding: 3px 5px;
+
+        background: #e4f1ff;
+        border: 1px solid #dbdbdb;
+        border-radius: 11.5px;
+
+        font-weight: 600;
+        font-size: 14px;
+        color: #027aff;
+      }
     }
     .footer-category {
       display: flex;
@@ -171,18 +191,19 @@
       font-size: 14px;
       color: #7f7f7f;
 
-      .choose-a-category {
+      .choose-a-category select {
         box-sizing: border-box;
-        // display: flex;
-        // flex-direction: row;
-        // justify-content: space-between;
-        // align-items: center;
-        padding: 3px 13px 3px 22px;
-        // gap: 10px;
+        padding: 3px 5px;
+        width: fit-content;
+        gap: 10px;
 
         background: #e4f1ff;
         border: 1px solid #dbdbdb;
         border-radius: 11.5px;
+
+        font-weight: 600;
+        font-size: 14px;
+        color: #027aff;
       }
     }
   }
@@ -192,11 +213,6 @@
     align-items: center;
 
     button {
-      // display: flex;
-      // flex-direction: row;
-      // justify-content: center;
-      // align-items: center;
-
       width: 100%;
       height: 52px;
 
