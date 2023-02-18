@@ -10,10 +10,10 @@ function App() {
   return (
     <>
       <div>
-        {/* <CreateNewTask /> */}
+        <CreateNewTask />
         {/* <HomePage /> */}
         {/* <HamburgerMenu /> */}
-        <SignupPage />
+        {/* <SignupPage /> */}
         {/* <LoginPage/> */}
         {/* <TodoForm /> */}
       </div>

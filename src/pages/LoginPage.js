@@ -24,7 +24,7 @@ const LoginPage = () => {
                 </div>
                 <div className="login-password">
                   <label>Password</label>
-                  <div className="login-field-password">
+                  <div className="login-password-field">
                     <input type="password" placeholder="***********" />
                     <span>
                       <AiOutlineEyeInvisible size={24} />

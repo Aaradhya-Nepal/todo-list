@@ -28,7 +28,7 @@ const SignupPage = () => {
                 </div>
                 <div className="signup-password">
                   <label>Password</label>
-                  <div className="signup-field-password">
+                  <div className="signup-password-field">
                     <input type="password" placeholder="***********" />
                     <span>
                       <AiOutlineEyeInvisible size={24} />

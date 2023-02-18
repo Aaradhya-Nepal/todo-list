@@ -14,7 +14,7 @@
   .signup-header-title {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 1.5rem;
     gap: 1rem;
     flex-wrap: wrap;
@@ -119,7 +119,7 @@
         color: #000000;
       }
 
-      .signup-field-password {
+      .signup-password-field {
         box-sizing: border-box;
         display: flex;
         // justify-content: space-between;
