@@ -14,9 +14,9 @@ function App() {
       <div>
         {/* <Search/> */}
         {/* <EditTask/> */}
-        {/* <CreateNewTask /> */}
+        <CreateNewTask />
         {/* <HomePage /> */}
-        <HamburgerMenu />
+        {/* <HamburgerMenu /> */}
         {/* <SignupPage /> */}
         {/* <LoginPage/> */}
         {/* <TodoForm /> */}

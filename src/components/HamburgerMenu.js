@@ -3,6 +3,10 @@ import "../styles/hamburger.scss";
 import CloseIcon from "./CloseIcon.js";
 import { FaSignOutAlt } from "react-icons/fa";
 import { BsLightningCharge } from "react-icons/bs";
+import { FiAlertCircle } from "react-icons/fi";
+import { HiOutlineUserCircle } from "react-icons/hi";
+import { HiOutlineSquares2X2, HiOutlineArrowPath } from "react-icons/hi2";
+import { CgCheckO } from "react-icons/cg";
 
 const HamburgerMenu = () => {
   return (
@@ -67,7 +71,43 @@ const HamburgerMenu = () => {
               </div>
               <div className="category">
                 <div className="category-name">
-                  <BsLightningCharge size={24} className="category-icon" />
+                  <FiAlertCircle size={24} className="category-icon" />
+                  <p>Important</p>
+                </div>
+                <div className="category-task-count">
+                  <p>8</p>
+                </div>
+              </div>
+              <div className="category">
+                <div className="category-name">
+                  <HiOutlineUserCircle size={24} className="category-icon" />
+                  <p>Personal</p>
+                </div>
+                <div className="category-task-count">
+                  <p>8</p>
+                </div>
+              </div>
+              <div className="category">
+                <div className="category-name">
+                  <HiOutlineSquares2X2 size={24} className="category-icon" />
+                  <p>All</p>
+                </div>
+                <div className="category-task-count">
+                  <p>8</p>
+                </div>
+              </div>
+              <div className="category">
+                <div className="category-name">
+                  <CgCheckO size={24} className="category-icon" />
+                  <p>Completed</p>
+                </div>
+                <div className="category-task-count">
+                  <p>8</p>
+                </div>
+              </div>
+              <div className="category">
+                <div className="category-name">
+                  <HiOutlineArrowPath size={24} className="category-icon" />
                   <p>Assigned to me</p>
                 </div>
                 <div className="category-task-count">
