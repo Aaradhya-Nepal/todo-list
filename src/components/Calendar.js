@@ -1,12 +1,15 @@
 import React from "react";
 import "../styles/calendar.scss";
+import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
 
 const Calendar = () => {
   return (
     <>
       <div className="calendar-container">
         <div className="calendar-header">
+          <BiLeftArrow />
           <span className="calendar-month">February 2023</span>
+          <BiRightArrow />
         </div>
         <div className="calendar-body">
           <div className="calendar-row">
