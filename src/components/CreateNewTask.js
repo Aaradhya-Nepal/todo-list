@@ -37,7 +37,7 @@ const CreateNewTask = () => {
               <div className="footer-due-date">
                 <p>Due date</p>
                 <div className="choose-a-date">
-                  <input type="date" />
+                    <p>calendar</p>
                 </div>
               </div>
               <div className="footer-category">

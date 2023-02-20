@@ -1,0 +1,46 @@
+$primary-color: #027aff;
+$background-color: #e4f1ff;
+
+.calendar-container {
+  border: 1px solid $primary-color;
+  border-radius: 5px;
+  background-color: $background-color;
+
+  .calendar-header {
+    background-color: $primary-color;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    // border-top-left-radius: 5px;
+    // border-top-right-radius: 5px;
+    font-weight: 600;
+  }
+
+  .calendar-month {
+    font-size: 1.2rem;
+  }
+
+  .calendar-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+  }
+
+  .calendar-day-name,
+  .calendar-date {
+    width: 14%;
+    text-align: center;
+    padding: 5px;
+    // border-radius: 50%;
+  }
+
+  .calendar-date:hover {
+    background-color: $primary-color;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .other-month {
+    color: #999;
+  }
+}

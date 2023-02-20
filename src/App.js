@@ -8,13 +8,15 @@ import HamburgerMenu from "./components/HamburgerMenu";
 import CreateNewTask from "./components/CreateNewTask";
 import EditTask from "./components/EditTask";
 import Search from "./components/Search";
+import Calendar from "./components/Calendar";
 function App() {
   return (
     <>
       <div>
+        <Calendar />
         {/* <Search/> */}
         {/* <EditTask/> */}
-        <CreateNewTask />
+        {/* <CreateNewTask /> */}
         {/* <HomePage /> */}
         {/* <HamburgerMenu /> */}
         {/* <SignupPage /> */}
