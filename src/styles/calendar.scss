@@ -67,13 +67,25 @@
 
   font-weight: 600;
   font-size: 13px;
+  cursor: pointer;
+  border-radius: 3px;
 }
 
 .calendar-day-name:hover {
   color: #aaaaaa;
 }
 .calendar-date:hover {
-  color: #aaaaaa;
+  background-color: #aaaaaa;
+}
+
+.today {
+  background-color: #027aff;
+  color: #fff;
+
+  &:hover {
+    background-color: #027aff;
+    color: #fff
+  }
 }
 // .calendar-day-name:active {
 //   color: #2f80ed;

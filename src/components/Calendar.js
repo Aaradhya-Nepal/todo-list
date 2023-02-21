@@ -1,84 +1,154 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import "../styles/calendar.scss";
+import "../styles/datePicker.scss";
 import { RxDoubleArrowRight, RxDoubleArrowLeft } from "react-icons/rx";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+import calendarBuilder, {getNextMonth, getPreviousMonth} from "../helpers/calendar";
+
+
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+const getMonthName = (monthId) => {
+  return MONTHS[monthId-1];
+}
 
 const Calendar = () => {
+
+  const [showCalendar, setShowCalender] = useState(false);
+  const [today, setToday] = useState({});
+  const [activeView, setActiveView] = useState({})
+  const [calendarDates, setCalendarDates] = useState([]);
+  const [selectedDate, setSelectedDate] = useState({});
+
+  const getToday = () => {
+    const d = new Date();
+    return {
+      day: d.getDate(),
+      month: d.getMonth() + 1,
+      year: d.getFullYear()
+    }
+  }
+
+  const getCalendarDates = (month, year) => {
+    const dates = calendarBuilder(month, year);
+    const mainArray = [];
+    let start = 0;
+    for (let i = 0; i < 6; i++) {
+      let subArray = [];
+      for (let j = start; j < start + 7; j++) {
+        subArray.push(dates[j]);
+      }
+      start = start + 7;
+      mainArray.push(subArray);
+    }
+    return mainArray;
+  }
+
+  useEffect(() => {
+    const td = getToday();
+    setToday(td);
+    setActiveView({
+      month: td.month,
+      year: td.year
+    });
+    setCalendarDates(getCalendarDates(td.month, td.year));
+    setSelectedDate(td);
+  }, []);
+
+  const handleDatepickerClick = () => {
+    setShowCalender(!showCalendar);
+  }
+
+  const handlePreviousMonth = () => {
+    const { month, year } = getPreviousMonth(activeView.month, activeView.year);
+    setActiveView({
+      month,
+      year
+    });
+    setCalendarDates(getCalendarDates(month, year));
+  }
+
+  const handleNextMonth = () => {
+    const { month, year } = getNextMonth(activeView.month, activeView.year);
+    setActiveView({
+      month,
+      year
+    });
+    setCalendarDates(getCalendarDates(month, year));
+  }
+
+  const selectDate = (date) => {
+    setSelectedDate({
+      year: date[0],
+      month: date[1],
+      day: date[2]
+    })
+    setShowCalender(false);
+  }
+
   return (
     <>
-      <div className="calendar-container">
-        <div className="calendar-header">
-          <RxDoubleArrowLeft />
-          <MdKeyboardArrowLeft />
-          <span className="calendar-month">February 2023</span>
-          <MdKeyboardArrowRight />
-          <RxDoubleArrowRight />
+      <div className={"datepicker-container"}>
+        <div className={"datepicker-field"} onClick={handleDatepickerClick}>
+          {getMonthName(selectedDate.month)} {selectedDate.day}, {selectedDate.year}
         </div>
-        <div className="calendar-body">
-          <div className="calendar-row">
-            <div class="calendar-day-name">Sun</div>
-            <div class="calendar-day-name">Mon</div>
-            <div class="calendar-day-name">Tue</div>
-            <div class="calendar-day-name">Wed</div>
-            <div class="calendar-day-name">Thu</div>
-            <div class="calendar-day-name">Fri</div>
-            <div class="calendar-day-name">Sat</div>
-          </div>
-          <div className="calendar-row">
-            <div class="calendar-date other-month">29</div>
-            <div class="calendar-date other-month">30</div>
-            <div class="calendar-date other-month">31</div>
-            <div class="calendar-date">1</div>
-            <div class="calendar-date">2</div>
-            <div class="calendar-date">3</div>
-            <div class="calendar-date">4</div>
-          </div>
-          <div className="calendar-row">
-            <div class="calendar-date">5</div>
-            <div class="calendar-date">6</div>
-            <div class="calendar-date">7</div>
-            <div class="calendar-date">8</div>
-            <div class="calendar-date">9</div>
-            <div class="calendar-date">10</div>
-            <div class="calendar-date">11</div>
-          </div>
-          <div className="calendar-row">
-            <div class="calendar-date">12</div>
-            <div class="calendar-date">13</div>
-            <div class="calendar-date">14</div>
-            <div class="calendar-date">15</div>
-            <div class="calendar-date">16</div>
-            <div class="calendar-date">17</div>
-            <div class="calendar-date">18</div>
-          </div>
-          <div className="calendar-row">
-            <div class="calendar-date">19</div>
-            <div class="calendar-date">20</div>
-            <div class="calendar-date">21</div>
-            <div class="calendar-date">22</div>
-            <div class="calendar-date">23</div>
-            <div class="calendar-date">24</div>
-            <div class="calendar-date">25</div>
-          </div>
-          <div className="calendar-row">
-            <div class="calendar-date">26</div>
-            <div class="calendar-date">27</div>
-            <div class="calendar-date">28</div>
-            <div class="calendar-date other-month">1</div>
-            <div class="calendar-date other-month">2</div>
-            <div class="calendar-date other-month">3</div>
-            <div class="calendar-date other-month">4</div>
-          </div>
-          <div className="calendar-row">
-            <div class="calendar-date other-month">5</div>
-            <div class="calendar-date other-month">6</div>
-            <div class="calendar-date other-month">7</div>
-            <div class="calendar-date other-month">8</div>
-            <div class="calendar-date other-month">9</div>
-            <div class="calendar-date other-month">10</div>
-            <div class="calendar-date other-month">11</div>
-          </div>
-        </div>
+        {
+            showCalendar && (
+                <div className={"main-wrapper"}>
+                  <div className="calendar-container">
+                    <div className="calendar-header">
+                      {/*<RxDoubleArrowLeft/>*/}
+                      <span onClick={handlePreviousMonth}>
+                        <MdKeyboardArrowLeft/>
+                      </span>
+                      <span className="calendar-month">
+                        {getMonthName(activeView.month)} {activeView.year}
+            </span>
+                      <span onClick={handleNextMonth}>
+                        <MdKeyboardArrowRight/>
+                      </span>
+                      {/*<RxDoubleArrowRight/>*/}
+                    </div>
+                    <div className="calendar-body">
+                      <div className="calendar-row">
+                        <div className="calendar-day-name">Sun</div>
+                        <div className="calendar-day-name">Mon</div>
+                        <div className="calendar-day-name">Tue</div>
+                        <div className="calendar-day-name">Wed</div>
+                        <div className="calendar-day-name">Thu</div>
+                        <div className="calendar-day-name">Fri</div>
+                        <div className="calendar-day-name">Sat</div>
+                      </div>
+                      {
+                        calendarDates && calendarDates.map(row => (
+                              <div className="calendar-row">
+                                {
+                                  row && row.map(d => {
+                                    let className = "calendar-date";
+                                    if (+d[1] !== activeView.month) {
+                                      className += " other-month"
+                                    }
+
+                                    if (+d[1] === today.month && +d[2] === today.day && +d[0] === today.year) {
+                                      className += " today"
+                                    }
+
+                                    return (
+                                        <div className={className} onClick={(e) => {
+                                          selectDate(d);
+                                        }
+                                        }>{d[2]}</div>
+                                    )
+                                    })
+                                }
+                              </div>
+                          ))
+                      }
+                    </div>
+                  </div>
+                </div>
+            )
+        }
       </div>
     </>
   );
