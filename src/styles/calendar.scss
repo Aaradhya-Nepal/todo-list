@@ -10,10 +10,6 @@
 
   font-weight: 700;
   font-size: 14px;
-
-  // position: relative;
-  // width: 250px;
-  // height: 241px;
 }
 .calendar-header {
   display: flex;
@@ -21,6 +17,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 5px 0px;
+  width: 230px;
+  height: 29px;
 }
 .calendar-row {
   display: flex;
@@ -70,3 +68,13 @@
   font-weight: 600;
   font-size: 13px;
 }
+
+.calendar-day-name:hover {
+  color: #aaaaaa;
+}
+.calendar-date:hover {
+  color: #aaaaaa;
+}
+// .calendar-day-name:active {
+//   color: #2f80ed;
+// }
