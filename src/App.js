@@ -13,10 +13,10 @@ function App() {
   return (
     <>
       <div>
-        <Calendar />
+        {/* <Calendar /> */}
         {/* <Search/> */}
         {/* <EditTask/> */}
-        {/* <CreateNewTask /> */}
+        <CreateNewTask />
         {/* <HomePage /> */}
         {/* <HamburgerMenu /> */}
         {/* <SignupPage /> */}

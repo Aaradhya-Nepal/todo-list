@@ -67,7 +67,7 @@ const HomePage = () => {
                 <div className="task-body">
                   <div className="task-complete">
                     <div className="task-complete-checkbox">
-                      {/*<div className="checked"></div>*/}
+                      {/* <div className="checked"></div> */}
                     </div>
                   </div>
                   <div className="task-content">
