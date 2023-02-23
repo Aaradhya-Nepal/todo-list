@@ -119,7 +119,7 @@ const Calendar = () => {
                 <span className="calendar-month">
                   <select name="month">
                     {MONTHS.map((index, month) => (
-                      <option key={index}>{getMonthName(month)}</option>
+                      <option key={index}>{getMonthName(month + 1)}</option>
                     ))}
                   </select>
                   <select name="year" id="">
