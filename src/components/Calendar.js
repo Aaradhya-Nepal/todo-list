@@ -117,6 +117,20 @@ const Calendar = () => {
                   <MdKeyboardArrowLeft />
                 </span>
                 <span className="calendar-month">
+                  <select name="month">
+                    {MONTHS.map((index, month) => (
+                      <option key={index}>{getMonthName(month)}</option>
+                    ))}
+                  </select>
+                  <select name="year" id="">
+                    <option value="year">2023</option>
+                    <option value="year">2022</option>
+                    <option value="year">2021</option>
+                    <option value="year">2020</option>
+                    <option value="year">2019</option>
+                    <option value="year">2018</option>
+                    <option value="year">2017</option>
+                  </select>
                   {getMonthName(activeView.month)} {activeView.year}
                 </span>
                 <span onClick={handleNextMonth}>
