@@ -22,6 +22,12 @@ const MONTHS = [
   "Dec",
 ];
 
+const YEARS = [];
+const currentYear = new Date().getFullYear();
+for (let year = 1900; year <= currentYear; year++) {
+  YEARS.push(year);
+}
+
 const getMonthName = (monthId) => {
   return MONTHS[monthId - 1];
 };
@@ -99,11 +105,7 @@ const Calendar = () => {
     setShowCalender(false);
   };
 
-  const YEARS = [];
-  const currentYear = new Date().getFullYear();
-  for (let year = 1900; year <= currentYear; year++) {
-    YEARS.push(year);
-  }
+  const handleSelectedMonth = () => {};
 
   return (
     <>
@@ -126,12 +128,13 @@ const Calendar = () => {
                   <select
                     name="month"
                     defaultValue={getMonthName(activeView.month)}
+                    onChange={handleSelectedMonth}
                   >
                     {MONTHS.map((index, month) => (
                       <option key={index}>{getMonthName(month + 1)}</option>
                     ))}
                   </select>
-                  <select name="year" defaultValue={new Date().getFullYear()}>
+                  <select name="year" defaultValue={new Date().getFullYear()}>  
                     {YEARS.map((year) => (
                       <option
                         key={year}
