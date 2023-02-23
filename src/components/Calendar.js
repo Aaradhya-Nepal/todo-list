@@ -99,6 +99,12 @@ const Calendar = () => {
     setShowCalender(false);
   };
 
+  const YEARS = [];
+  const currentYear = new Date().getFullYear();
+  for (let year = 1900; year <= currentYear; year++) {
+    YEARS.push(year);
+  }
+
   return (
     <>
       <div className={"datepicker-container"}>
@@ -117,19 +123,23 @@ const Calendar = () => {
                   <MdKeyboardArrowLeft />
                 </span>
                 <span className="calendar-month">
-                  <select name="month">
+                  <select
+                    name="month"
+                    defaultValue={getMonthName(activeView.month)}
+                  >
                     {MONTHS.map((index, month) => (
                       <option key={index}>{getMonthName(month + 1)}</option>
                     ))}
                   </select>
-                  <select name="year" id="">
-                    <option value="year">2023</option>
-                    <option value="year">2022</option>
-                    <option value="year">2021</option>
-                    <option value="year">2020</option>
-                    <option value="year">2019</option>
-                    <option value="year">2018</option>
-                    <option value="year">2017</option>
+                  <select name="year" defaultValue={new Date().getFullYear()}>
+                    {YEARS.map((year) => (
+                      <option
+                        key={year}
+                        defaultValue={new Date().getFullYear()}
+                      >
+                        {year}
+                      </option>
+                    ))}
                   </select>
                   {getMonthName(activeView.month)} {activeView.year}
                 </span>
