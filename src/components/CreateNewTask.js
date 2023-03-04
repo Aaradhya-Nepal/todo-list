@@ -48,6 +48,7 @@ const CreateNewTask = () => {
                     <option value="category">Personal</option>
                     <option value="category">GoPay</option>
                     <option value="category">Kreta Studios</option>
+                    
                   </select>
                 </div>
               </div>

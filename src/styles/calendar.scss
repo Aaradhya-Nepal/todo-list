@@ -43,7 +43,7 @@
   font-size: 14px;
 
   user-select: none;
-  transform: translateX(-63%);
+  transform: translateX(-64%);
 
   color: #333333;
 }
@@ -109,9 +109,6 @@
   cursor: pointer;
   border-radius: 3px;
 }
-.calendar-day-name:hover {
-  background-color: #aaaaaa;
-}
 .calendar-date:hover {
   background-color: #aaaaaa;
 }
@@ -121,6 +118,15 @@
 
   &:hover {
     background-color: #027aff;
+    color: #fff;
+  }
+}
+.selected-date {
+  background-color: green;
+  color: #fff;
+
+  &:hover {
+    background-color: green;
     color: #fff;
   }
 }
