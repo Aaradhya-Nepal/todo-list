@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoIosAdd } from "react-icons/io";
 import "../styles/createTask.scss";
 import Calendar from "./Calendar";
@@ -48,7 +48,6 @@ const CreateNewTask = () => {
                     <option value="category">Personal</option>
                     <option value="category">GoPay</option>
                     <option value="category">Kreta Studios</option>
-                    
                   </select>
                 </div>
               </div>

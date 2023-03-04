@@ -124,15 +124,6 @@ const Calendar = () => {
     setShowCalender(false);
   };
 
-  // const handleDatepickerReset = () => {
-  //   setActiveView({
-  //     ...activeView,
-  //     month: selectedDate.month,
-  //     year: selectDate.year,
-  //     day: selectDate.day,
-  //   });
-  // };
-
   return (
     <>
       <div className={"datepicker-container"}>
