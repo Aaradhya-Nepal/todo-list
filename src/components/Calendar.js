@@ -76,6 +76,11 @@ const Calendar = () => {
 
   const handleDatepickerClick = () => {
     setShowCalender(!showCalendar);
+    setActiveView({
+      year: selectedDate.year,
+      month: selectedDate.month,
+    });
+    setCalendarDates(getCalendarDates(selectedDate.month, selectedDate.year));
   };
 
   const handlePreviousMonth = () => {
