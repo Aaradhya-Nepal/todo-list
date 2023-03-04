@@ -43,7 +43,7 @@
   font-size: 14px;
 
   user-select: none;
-  transform: translateX(-67%);
+  transform: translateX(-66%);
 
   color: #333333;
 }
@@ -128,5 +128,15 @@
   &:hover {
     background-color: green;
     color: #fff;
+  }
+}
+.calendar-month-year {
+  .months {
+    border-radius: 4px;
+    padding: 2px;
+  }
+  .years {
+    border-radius: 4px;
+    padding: 2px;
   }
 }

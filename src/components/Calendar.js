@@ -129,6 +129,13 @@ const Calendar = () => {
     setShowCalender(false);
   };
 
+  const hideDatepicker = () => {
+    function hideCalendar() {
+      setShowCalender(false);
+    }
+    document.body.addEventListener("click", hideCalendar);
+  };
+
   return (
     <>
       <div className={"datepicker-container"}>
@@ -146,11 +153,12 @@ const Calendar = () => {
                 <span onClick={handlePreviousMonth}>
                   <MdKeyboardArrowLeft />
                 </span>
-                <span className="calendar-month">
+                <span className="calendar-month-year">
                   <select
                     name="month"
                     value={getMonthName(activeView.month)}
                     onChange={handleUpdateMonth}
+                    className="months"
                   >
                     {MONTHS.map((index, month) => (
                       <option key={index}>{getMonthName(month + 1)}</option>
@@ -160,6 +168,7 @@ const Calendar = () => {
                     name="year"
                     value={activeView.year}
                     onChange={handleUpdateYear}
+                    className="years"
                   >
                     {YEARS.map((year) => (
                       <option
