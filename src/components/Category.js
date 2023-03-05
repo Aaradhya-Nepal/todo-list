@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import "../styles/category.scss";
 
 const Category = () => {
-  const [categoryName, setCategoryName] = useState(["Personal"]);
+  const emptyCategory = {
+    id: 0,
+    name: "",
+  };
+  const [category, setCategory] = useState(emptyCategory);
+  const [categories, setCategories] = useState([]);
   const [showCategory, setShowCategory] = useState(false);
 
   const handleCategory = () => {
@@ -10,22 +15,39 @@ const Category = () => {
   };
 
   const handleChange = (e) => {
-    setCategoryName(e.target.value);
+    setCategory({
+      ...category,
+      name: e.target.value,
+    });
+  };
+
+  const handleAdd = () => {
+    setCategories([...categories, category]);
+    setCategory({
+      ...emptyCategory,
+      id: category.id + 1,
+    });
   };
 
   return (
     <>
       <div className="category-container">
         <div className="category-field" onClick={handleCategory}>
-          {/* {categoryName} */}
+          {/* {category} */}
         </div>
         {showCategory && (
           <div className="category-field">
             <div className="category-input-field">
-              <input type="text" value={categoryName} onChange={handleChange} />
+              <input
+                type="text"
+                value={category.name}
+                onChange={handleChange}
+              />
+              <button onClick={handleAdd}>Click me</button>
             </div>
             <div className="category-lists">
-              <option value="personal">{categoryName}</option>
+              {categories &&
+                categories.map((c) => <option key={c.id}>{c.name}</option>)}
             </div>
           </div>
         )}

@@ -113,7 +113,6 @@ function TodoForm() {
           tasks.map((t) => (
             <>
               <Task
-              
                 task={t}
                 onEdit={handleEdit}
                 onDelete={handleDelete}
