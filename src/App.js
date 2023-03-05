@@ -14,9 +14,9 @@ function App() {
   return (
     <>
       <div>
-        {/* <Category /> */}
+        <Category />
         {/* <Calendar /> */}
-        <Search/>
+        {/* <Search/> */}
         {/* <EditTask/> */}
         {/* <CreateNewTask /> */}
         {/* <HomePage /> */}

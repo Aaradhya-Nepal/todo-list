@@ -35,17 +35,22 @@ const Category = () => {
     }
   };
 
+  const handleDuplicates = () => {
+    if (!categories.includes(categories)) {
+      categories.push(categories);
+    }
+  };
+
   return (
     <>
       <div className="category-container">
         <div className="category-field" onClick={handleCategory}>
-          Category Here
+          Category
         </div>
         {showCategory && (
           <div className="category-field">
             <div className="category-input-field">
               <input
-                id="myInput"
                 type="text"
                 value={category.name}
                 onChange={handleChange}

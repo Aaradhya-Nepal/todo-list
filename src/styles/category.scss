@@ -1,22 +1,29 @@
 .category-field {
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
   padding: 10px 10px;
+  gap: 0.4rem;
 
   user-select: none;
   cursor: pointer;
 
   background: #e4f1ff;
   border: 1px solid #dbdbdb;
-  border-radius: 11.5px;
+  border-bottom: 11.5px;
 
   font-weight: 600;
   font-size: 14px;
   color: #027aff;
 }
 .category-input-field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   input {
-    display: flex;
-    border-radius: 3px;
+    padding: 2px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #000000;
   }
 }
