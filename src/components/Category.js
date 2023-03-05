@@ -9,22 +9,23 @@ const Category = () => {
     setShowCategory(!showCategory);
   };
 
+  const handleChange = (e) => {
+    setCategoryName(e.target.value);
+  };
+
   return (
     <>
       <div className="category-container">
         <div className="category-field" onClick={handleCategory}>
-          {categoryName}
+          {/* {categoryName} */}
         </div>
         {showCategory && (
           <div className="category-field">
             <div className="category-input-field">
-              <input type="text" />
+              <input type="text" value={categoryName} onChange={handleChange} />
             </div>
             <div className="category-lists">
-              <option value="personal">personal</option>
-              <option value="personal">personal</option>
-              <option value="personal">personal</option>
-              <option value="personal">personal</option>
+              <option value="personal">{categoryName}</option>
             </div>
           </div>
         )}
