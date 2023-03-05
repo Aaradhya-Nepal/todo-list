@@ -9,14 +9,16 @@ import CreateNewTask from "./components/CreateNewTask";
 import EditTask from "./components/EditTask";
 import Search from "./components/Search";
 import Calendar from "./components/Calendar";
+import Category from "./components/Category";
 function App() {
   return (
     <>
       <div>
+        <Category />
         {/* <Calendar /> */}
         {/* <Search/> */}
         {/* <EditTask/> */}
-        <CreateNewTask />
+        {/* <CreateNewTask /> */}
         {/* <HomePage /> */}
         {/* <HamburgerMenu /> */}
         {/* <SignupPage /> */}
