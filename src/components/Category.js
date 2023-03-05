@@ -29,25 +29,36 @@ const Category = () => {
     });
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleAdd();
+    }
+  };
+
   return (
     <>
       <div className="category-container">
         <div className="category-field" onClick={handleCategory}>
-          {/* {category} */}
+          Category Here
         </div>
         {showCategory && (
           <div className="category-field">
             <div className="category-input-field">
               <input
+                id="myInput"
                 type="text"
                 value={category.name}
                 onChange={handleChange}
+                onKeyDown={handleKeyDown}
               />
-              <button onClick={handleAdd}>Click me</button>
             </div>
             <div className="category-lists">
               {categories &&
-                categories.map((c) => <option key={c.id}>{c.name}</option>)}
+                categories.map((c) => (
+                  <div key={c.id}>
+                    <option key={c.id}>{c.name}</option>
+                  </div>
+                ))}
             </div>
           </div>
         )}
