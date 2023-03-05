@@ -35,12 +35,6 @@ const Category = () => {
     }
   };
 
-  const handleDuplicates = () => {
-    if (!categories.includes(categories)) {
-      categories.push(categories);
-    }
-  };
-
   return (
     <>
       <div className="category-container">
