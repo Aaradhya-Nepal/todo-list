@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/category.scss";
+import { RiDeleteBin5Line } from "react-icons/ri";
 
 const Category = () => {
   const emptyCategory = {
@@ -39,6 +40,16 @@ const Category = () => {
     }
   };
 
+  const handleDelete = (id) => {
+    setCategories((c) => {
+      return c.filter((ca) => ca.id !== id);
+    });
+  };
+
+  const displayCategory = () => {
+    
+  };
+
   return (
     <>
       <div className="category-container">
@@ -58,8 +69,13 @@ const Category = () => {
             <div className="category-lists">
               {categories &&
                 categories.map((c) => (
-                  <div key={c.id}>
-                    <option key={c.id}>{c.name}</option>
+                  <div key={c.id} className="options">
+                    <div className="option-name">
+                      <option onClick={displayCategory}>{c.name}</option>
+                    </div>
+                    <div className="delete-category">
+                      <RiDeleteBin5Line onClick={() => handleDelete(c.id)} />
+                    </div>
                   </div>
                 ))}
             </div>
