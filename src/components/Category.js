@@ -22,11 +22,15 @@ const Category = () => {
   };
 
   const handleAdd = () => {
-    setCategories([...categories, category]);
-    setCategory({
-      ...emptyCategory,
-      id: category.id + 1,
-    });
+    let userValue = category.name;
+    let inputValue = categories.find((a) => a.name === userValue);
+    if (!categories.includes(inputValue)) {
+      setCategories([...categories, category]);
+      setCategory({
+        ...emptyCategory,
+        id: category.id + 1,
+      });
+    }
   };
 
   const handleKeyDown = (e) => {
