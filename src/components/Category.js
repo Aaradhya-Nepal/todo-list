@@ -46,14 +46,14 @@ const Category = () => {
     });
   };
 
-  const displayCategory = () => {
-    
-  };
-
   return (
     <>
       <div className="category-container">
-        <div className="category-field" onClick={handleCategory}>
+        <div
+          id="display-category"
+          className="category-field"
+          onClick={handleCategory}
+        >
           Category
         </div>
         {showCategory && (
@@ -71,7 +71,7 @@ const Category = () => {
                 categories.map((c) => (
                   <div key={c.id} className="options">
                     <div className="option-name">
-                      <option onClick={displayCategory}>{c.name}</option>
+                      <option value={c.name}>{c.name}</option>
                     </div>
                     <div className="delete-category">
                       <RiDeleteBin5Line onClick={() => handleDelete(c.id)} />
