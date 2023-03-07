@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { IoIosAdd } from "react-icons/io";
 import "../styles/createTask.scss";
 import Calendar from "./Calendar";
+import Category from "./Category";
 import CloseIcon from "./CloseIcon";
 
 const CreateNewTask = () => {
@@ -44,11 +45,7 @@ const CreateNewTask = () => {
               <div className="footer-category">
                 <p>Category</p>
                 <div className="choose-a-category">
-                  <select name="category">
-                    <option value="category">Personal</option>
-                    <option value="category">GoPay</option>
-                    <option value="category">Kreta Studios</option>
-                  </select>
+                  <Category />
                 </div>
               </div>
             </div>

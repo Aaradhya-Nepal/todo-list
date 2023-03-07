@@ -1,16 +1,31 @@
+.category-container {
+  position: relative;
+}
 .category-field {
+  position: absolute;
+  background: #ffffff;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  padding: 10px;
+
+  font-weight: 600;
+  font-size: 14px;
+  color: #000000;
+  transform: translateX(-75%);
+}
+.category-info-field {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  gap: 0.3rem;
   padding: 10px 10px;
-  gap: 0.4rem;
 
   user-select: none;
   cursor: pointer;
 
   background: #e4f1ff;
   border: 1px solid #dbdbdb;
-  border-bottom: 11.5px;
+  border-radius: 11.5px;
 
   font-weight: 600;
   font-size: 14px;
@@ -20,8 +35,8 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin-bottom: 5px;
   input {
-    padding: 2px;
     font-weight: 400;
     font-size: 14px;
     color: #000000;
@@ -40,10 +55,13 @@
   justify-content: space-between;
   padding: 5px 2px;
 
+  font-weight: 600;
+
   &:hover {
     background-color: #027aff;
     cursor: pointer;
     color: #fff;
+    border-radius: 2px;
   }
 
   .delete-category {

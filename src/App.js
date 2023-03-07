@@ -14,11 +14,11 @@ function App() {
   return (
     <>
       <div>
-        <Category />
+        {/* <Category /> */}
         {/* <Calendar /> */}
         {/* <Search/> */}
         {/* <EditTask/> */}
-        {/* <CreateNewTask /> */}
+        <CreateNewTask />
         {/* <HomePage /> */}
         {/* <HamburgerMenu /> */}
         {/* <SignupPage /> */}

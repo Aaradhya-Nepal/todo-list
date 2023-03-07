@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles/category.scss";
-import { RiDeleteBin5Line } from "react-icons/ri";
+import { TiDeleteOutline } from "react-icons/ti";
 
 const Category = () => {
   const emptyCategory = {
@@ -65,7 +65,7 @@ const Category = () => {
       <div className="category-container">
         <div
           id="display-category"
-          className="category-field"
+          className="category-info-field"
           onClick={handleCategory}
         >
           {selectedCategory.name}
@@ -78,6 +78,7 @@ const Category = () => {
                 value={category.name}
                 onChange={handleChange}
                 onKeyDown={handleKeyDown}
+                placeholder="add a category.."
               />
             </div>
             <div className="category-lists">
@@ -92,7 +93,7 @@ const Category = () => {
                       <option value={c.name}>{c.name}</option>
                     </div>
                     <div className="delete-category">
-                      <RiDeleteBin5Line onClick={() => handleDelete(c.id)} />
+                      <TiDeleteOutline onClick={() => handleDelete(c.id)} />
                     </div>
                   </div>
                 ))}
