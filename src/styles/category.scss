@@ -1,19 +1,7 @@
-.category-container {
+.category-main-container {
   position: relative;
 }
-.category-field {
-  position: absolute;
-  background: #ffffff;
-  border: 1px solid #dbdbdb;
-  border-radius: 4px;
-  padding: 10px;
-
-  font-weight: 600;
-  font-size: 14px;
-  color: #000000;
-  transform: translateX(-75%);
-}
-.category-info-field {
+.display-category-field {
   display: flex;
   align-items: center;
   box-sizing: border-box;
@@ -31,6 +19,21 @@
   font-size: 14px;
   color: #027aff;
 }
+.category-container {
+  position: absolute;
+}
+.category-field {
+  background: #ffffff;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  padding: 10px;
+
+  font-weight: 600;
+  font-size: 14px;
+  color: #000000;
+  transform: translateX(-75%);
+}
+
 .category-input-field {
   display: flex;
   flex-direction: column;

@@ -62,41 +62,42 @@ const Category = () => {
 
   return (
     <>
-      <div className="category-container">
+      <div className="category-main-container">
         <div
           id="display-category"
-          className="category-info-field"
+          className="display-category-field"
           onClick={handleCategory}
         >
           {selectedCategory.name}
         </div>
         {showCategory && (
-          <div className="category-field">
-            <div className="category-input-field">
-              <input
-                type="text"
-                value={category.name}
-                onChange={handleChange}
-                onKeyDown={handleKeyDown}
-                placeholder="add a category.."
-              />
-            </div>
-            <div className="category-lists">
-              {categories &&
-                categories.map((c) => (
-                  <div
-                    key={c.id}
-                    className="options"
-                    onClick={(e) => handleSelectCategory(c)}
-                  >
-                    <div className="option-name">
-                      <option value={c.name}>{c.name}</option>
+          <div className="category-container">
+            <div className="category-field">
+              <div className="category-input-field">
+                <input
+                  type="text"
+                  value={category.name}
+                  onChange={handleChange}
+                  onKeyDown={handleKeyDown}
+                />
+              </div>
+              <div className="category-lists">
+                {categories &&
+                  categories.map((c) => (
+                    <div
+                      key={c.id}
+                      className="options"
+                      onClick={(e) => handleSelectCategory(c)}
+                    >
+                      <div className="option-name">
+                        <option value={c.name}>{c.name}</option>
+                      </div>
+                      <div className="delete-category">
+                        <TiDeleteOutline onClick={() => handleDelete(c.id)} />
+                      </div>
                     </div>
-                    <div className="delete-category">
-                      <TiDeleteOutline onClick={() => handleDelete(c.id)} />
-                    </div>
-                  </div>
-                ))}
+                  ))}
+              </div>
             </div>
           </div>
         )}
