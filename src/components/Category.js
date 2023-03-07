@@ -10,6 +10,7 @@ const Category = () => {
   const [category, setCategory] = useState(emptyCategory);
   const [categories, setCategories] = useState([]);
   const [showCategory, setShowCategory] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState({});
 
   //show category on/off
   const handleCategory = () => {
@@ -52,8 +53,11 @@ const Category = () => {
   };
 
   //selecting the category and displaying it in the category field
-  const selectCategory = () => {
-    
+  const handleSelectCategory = (e) => {
+    setSelectedCategory({
+      name: e.name,
+    });
+    setShowCategory(false);
   };
 
   return (
@@ -64,7 +68,7 @@ const Category = () => {
           className="category-field"
           onClick={handleCategory}
         >
-          Category
+          {selectedCategory.name}
         </div>
         {showCategory && (
           <div className="category-field">
@@ -79,7 +83,11 @@ const Category = () => {
             <div className="category-lists">
               {categories &&
                 categories.map((c) => (
-                  <div key={c.id} className="options">
+                  <div
+                    key={c.id}
+                    className="options"
+                    onClick={(e) => handleSelectCategory(c)}
+                  >
                     <div className="option-name">
                       <option value={c.name}>{c.name}</option>
                     </div>
