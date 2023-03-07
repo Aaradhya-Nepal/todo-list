@@ -129,13 +129,6 @@ const Calendar = () => {
     setShowCalender(false);
   };
 
-  // const hideDatepicker = () => {
-  //   function hideCalendar() {
-  //     setShowCalender(false);
-  //   }
-  //   document.body.addEventListener("click", hideCalendar);
-  // };
-
   return (
     <>
       <div className={"datepicker-container"}>

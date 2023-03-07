@@ -11,10 +11,12 @@ const Category = () => {
   const [categories, setCategories] = useState([]);
   const [showCategory, setShowCategory] = useState(false);
 
+  //show category on/off
   const handleCategory = () => {
     setShowCategory(!showCategory);
   };
 
+  //getting the value in the input
   const handleChange = (e) => {
     setCategory({
       ...category,
@@ -22,6 +24,7 @@ const Category = () => {
     });
   };
 
+  //adding the inputed value in the list
   const handleAdd = () => {
     let userValue = category.name;
     let inputValue = categories.find((a) => a.name === userValue);
@@ -34,16 +37,23 @@ const Category = () => {
     }
   };
 
+  //adding the items from the input field when "Enter" is pressed
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       handleAdd();
     }
   };
 
+  //Deleting the items from the list
   const handleDelete = (id) => {
     setCategories((c) => {
       return c.filter((ca) => ca.id !== id);
     });
+  };
+
+  //selecting the category and displaying it in the category field
+  const selectCategory = () => {
+    
   };
 
   return (
