@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoIosAdd } from "react-icons/io";
 import { AiTwotoneStar } from "react-icons/ai";
 import { RxDotFilled } from "react-icons/rx";
 import NavBar from "../components/NavBar";
 import "../styles/home.scss";
+import HamburgerMenu from "../components/HamburgerMenu";
+import CreateNewTask from "../components/CreateNewTask";
 
 const data = [
   {
@@ -42,10 +44,11 @@ const data = [
 ];
 
 const HomePage = () => {
+  const [showTask, setShowTask] = useState(false);
   return (
     <>
       <div className="main-container">
-        <NavBar></NavBar>
+        <NavBar />
         <div className="todo-container">
           <div className="todo-header">
             <div className="header-title">
@@ -53,7 +56,11 @@ const HomePage = () => {
               <p className="header-title-date">December 2022</p>
             </div>
             <div className="header-actions">
-              <button type="button" className="button">
+              <button
+                type="button"
+                className="button"
+                onClick={() => setShowTask(!showTask)}
+              >
                 <div className="button-icon">
                   <IoIosAdd size={19} className="plus" />
                 </div>
@@ -61,6 +68,7 @@ const HomePage = () => {
               </button>
             </div>
           </div>
+          {showTask && <CreateNewTask />}
           <ul className="tasks">
             {data.map((task) => (
               <li key={task.id} className="task">

@@ -1,21 +1,26 @@
 import { RxHamburgerMenu } from "react-icons/rx";
 import { RiNotification4Line, RiSearch2Line } from "react-icons/ri";
 import { IoSettingsOutline } from "react-icons/io5";
-import React from "react";
+import React, { useState } from "react";
 import "../styles/navbar.scss";
+import HamburgerMenu from "./HamburgerMenu";
 
 const NavBar = () => {
+  const [open, setOpen] = useState(false);
   return (
-    <div className="navbar">
-      <div className="navbar-menu">
-        <RxHamburgerMenu size={22} />
+    <>
+      <div className="navbar">
+        <div className="navbar-menu">
+          <RxHamburgerMenu size={22} onClick={() => setOpen(!open)} />
+        </div>
+        <div className="navbar-actions">
+          <RiSearch2Line size={22} />
+          <RiNotification4Line size={22} />
+          <IoSettingsOutline size={22} />
+        </div>
       </div>
-      <div className="navbar-actions">
-        <RiSearch2Line size={22} />
-        <RiNotification4Line size={22} />
-        <IoSettingsOutline size={22} />
-      </div>
-    </div>
+      {open && <HamburgerMenu />}
+    </>
   );
 };
 
