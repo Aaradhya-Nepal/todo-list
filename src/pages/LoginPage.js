@@ -2,8 +2,10 @@ import React from "react";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 import "../styles/login.scss";
 import GoogleLoginButton from "../components/GoogleLoginButton";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="main-container">
@@ -38,7 +40,9 @@ const LoginPage = () => {
               </form>
             </div>
             <div className="login-button">
-              <button type="button">Log in</button>
+              <button type="button" onClick={() => navigate("/")}>
+                Log in
+              </button>
               <a href="/#">Forgot Password?</a>
             </div>
           </div>

@@ -7,8 +7,10 @@ import { FiAlertCircle } from "react-icons/fi";
 import { HiOutlineUserCircle } from "react-icons/hi";
 import { HiOutlineSquares2X2, HiOutlineArrowPath } from "react-icons/hi2";
 import { CgCheckO } from "react-icons/cg";
+import { useNavigate } from "react-router-dom";
 
 const HamburgerMenu = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="main-container">
@@ -52,7 +54,7 @@ const HamburgerMenu = () => {
               </div>
             </div>
             <div className="signout-button">
-              <FaSignOutAlt size={20} />
+              <FaSignOutAlt size={20} onClick={() => navigate("/login")} />
             </div>
           </div>
           <div className="menu-categories">

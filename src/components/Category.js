@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/category.scss";
 import { TiDeleteOutline } from "react-icons/ti";
 
@@ -11,6 +11,10 @@ const Category = () => {
   const [categories, setCategories] = useState([]);
   const [showCategory, setShowCategory] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState({});
+
+  // useEffect(() => {
+  //   setSelectedCategory( );
+  // });
 
   //show category on/off
   const handleCategory = () => {
@@ -59,7 +63,6 @@ const Category = () => {
     });
     setShowCategory(false);
   };
-
   return (
     <>
       <div className="category-main-container">
@@ -68,7 +71,9 @@ const Category = () => {
           className="display-category-field"
           onClick={handleCategory}
         >
-          {selectedCategory.name}
+          {Object.keys(selectedCategory).length === 0
+            ? "Select a category"
+            : selectedCategory?.name}
         </div>
         {showCategory && (
           <div className="category-container">
