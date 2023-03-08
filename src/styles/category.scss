@@ -6,17 +6,17 @@
   align-items: center;
   box-sizing: border-box;
   gap: 0.3rem;
-  padding: 10px 10px;
+  padding: 0.625rem 0.625rem;
 
   user-select: none;
   cursor: pointer;
 
   background: #e4f1ff;
-  border: 1px solid #dbdbdb;
-  border-radius: 11.5px;
+  border: 0.0625rem solid #dbdbdb;
+  border-radius: 0.7188rem;
 
   font-weight: 600;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #027aff;
 }
 .category-container {
@@ -24,12 +24,12 @@
 }
 .category-field {
   background: #ffffff;
-  border: 1px solid #dbdbdb;
-  border-radius: 4px;
-  padding: 10px;
+  border: 0.0625rem solid #dbdbdb;
+  border-radius: 0.25rem;
+  padding: 0.625rem;
 
   font-weight: 600;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #000000;
   transform: translateX(-75%);
 }
@@ -38,10 +38,10 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-bottom: 5px;
+  margin-bottom: 0.3125rem;
   input {
     font-weight: 400;
-    font-size: 14px;
+    font-size: 0.875rem;
     color: #000000;
   }
 }
@@ -56,7 +56,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5px 2px;
+  padding: 0.3125rem 0.125rem;
 
   font-weight: 600;
 
@@ -64,7 +64,7 @@
     background-color: #027aff;
     cursor: pointer;
     color: #fff;
-    border-radius: 2px;
+    border-radius: 0.125rem;
   }
 
   .delete-category {

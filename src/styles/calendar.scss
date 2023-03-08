@@ -9,17 +9,17 @@
   align-items: center;
   box-sizing: border-box;
   gap: 0.3rem;
-  padding: 10px 10px;
+  padding: 0.625rem 0.625rem;
 
   user-select: none;
   cursor: pointer;
 
   background: #e4f1ff;
-  border: 1px solid #dbdbdb;
-  border-radius: 11.5px;
+  border: 0.0625rem solid #dbdbdb;
+  border-radius: 0.7188rem;
 
   font-weight: 600;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #027aff;
 
   .datepicker-icon {
@@ -36,11 +36,11 @@
   position: absolute;
 
   background: #ffffff;
-  border: 1px solid #e1e1e1;
-  border-radius: 8px;
+  border: 0.0625rem solid #e1e1e1;
+  border-radius: 0.5rem;
 
   font-weight: 700;
-  font-size: 14px;
+  font-size: 0.875rem;
 
   user-select: none;
   transform: translateX(-66%);
@@ -52,7 +52,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 5px;
+  padding: 0.3125rem;
   margin-top: 0.2rem;
   width: 70%;
 }
@@ -61,7 +61,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 0.625rem;
 }
 .calendar-row {
   display: flex;
@@ -73,9 +73,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 0.625rem;
 
-    width: 32.86px;
+    width: 2.0537rem;
 
     background: #ffffff;
   }
@@ -85,9 +85,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 0.625rem;
 
-  width: 32.86px;
+  width: 2.0537rem;
 
   background: #ffffff;
   color: #aaaaaa;
@@ -97,17 +97,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 0.625rem;
 
-  width: 32.86px;
+  width: 2.0537rem;
 
   background: #ffffff;
 
   font-weight: 600;
-  font-size: 13px;
+  font-size: 0.8125rem;
 
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: 0.1875rem;
 }
 .calendar-date:hover {
   background-color: #e2e2e2;
@@ -132,13 +132,13 @@
 }
 .calendar-month-year {
   display: flex;
-  gap: 3px;
+  gap: 0.1875rem;
   .months {
-    border-radius: 4px;
-    padding: 2px;
+    border-radius: 0.25rem;
+    padding: 0.125rem;
   }
   .years {
-    border-radius: 4px;
-    padding: 2px;
+    border-radius: 0.25rem;
+    padding: 0.125rem;
   }
 }

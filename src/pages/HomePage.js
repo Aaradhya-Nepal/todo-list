@@ -4,8 +4,6 @@ import { AiTwotoneStar } from "react-icons/ai";
 import { RxDotFilled } from "react-icons/rx";
 import NavBar from "../components/NavBar";
 import "../styles/home.scss";
-import HamburgerMenu from "../components/HamburgerMenu";
-import CreateNewTask from "../components/CreateNewTask";
 import { useNavigate } from "react-router-dom";
 
 const data = [
@@ -49,7 +47,7 @@ const HomePage = () => {
   return (
     <>
       <div className="main-container">
-        <NavBar onClick={() => navigate("/menu")} />
+        <NavBar />
         <div className="todo-container">
           <div className="todo-header">
             <div className="header-title">
@@ -79,7 +77,12 @@ const HomePage = () => {
                     </div>
                   </div>
                   <div className="task-content">
-                    <div className="task-title" onClick={()=>navigate("/edit-task")}>{task.title}</div>
+                    <div
+                      className="task-title"
+                      onClick={() => navigate("/edit-task")}
+                    >
+                      {task.title}
+                    </div>
                     <div className="task-category">
                       <div className="task-category-title">{task.category}</div>
                       <div className="task-category-separator">

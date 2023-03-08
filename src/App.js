@@ -4,13 +4,10 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
-import TodoForm from "./components/TodoForm";
 import HamburgerMenu from "./components/HamburgerMenu";
 import CreateNewTask from "./components/CreateNewTask";
 import EditTask from "./components/EditTask";
 import Search from "./components/Search";
-import Calendar from "./components/Calendar";
-import Category from "./components/Category";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +33,10 @@ const router = createBrowserRouter([
   {
     path: "/edit-task",
     element: <EditTask />,
+  },
+  {
+    path: "/search",
+    element: <Search />,
   },
 ]);
 
