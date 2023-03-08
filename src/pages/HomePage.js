@@ -79,7 +79,7 @@ const HomePage = () => {
                     </div>
                   </div>
                   <div className="task-content">
-                    <div className="task-title">{task.title}</div>
+                    <div className="task-title" onClick={()=>navigate("/edit-task")}>{task.title}</div>
                     <div className="task-category">
                       <div className="task-category-title">{task.category}</div>
                       <div className="task-category-separator">

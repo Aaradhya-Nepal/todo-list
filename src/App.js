@@ -33,6 +33,10 @@ const router = createBrowserRouter([
     path: "/menu",
     element: <HamburgerMenu />,
   },
+  {
+    path: "/edit-task",
+    element: <EditTask />,
+  },
 ]);
 
 function App() {

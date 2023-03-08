@@ -1,5 +1,6 @@
 import React from "react";
 import { IoIosAdd } from "react-icons/io";
+import Calendar from "../components/Calendar";
 import "../styles/createTask.scss";
 import CloseIcon from "./CloseIcon";
 
@@ -37,7 +38,7 @@ const EditTask = () => {
               <div className="footer-due-date">
                 <p>Due date</p>
                 <div className="choose-a-date">
-                  <input type="date" />
+                  <Calendar />
                 </div>
               </div>
               <div className="footer-category">
