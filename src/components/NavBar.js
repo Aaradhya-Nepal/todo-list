@@ -4,14 +4,15 @@ import { IoSettingsOutline } from "react-icons/io5";
 import React, { useState } from "react";
 import "../styles/navbar.scss";
 import HamburgerMenu from "./HamburgerMenu";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
-  const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
   return (
     <>
       <div className="navbar">
         <div className="navbar-menu">
-          <RxHamburgerMenu size={22} onClick={() => setOpen(!open)} />
+          <RxHamburgerMenu size={22} onClick={() => navigate("/menu")} />
         </div>
         <div className="navbar-actions">
           <RiSearch2Line size={22} />
@@ -19,7 +20,6 @@ const NavBar = () => {
           <IoSettingsOutline size={22} />
         </div>
       </div>
-      {open && <HamburgerMenu />}
     </>
   );
 };

@@ -16,12 +16,6 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <HomePage />,
-    children: [
-      {
-        path: "menu",
-        element: <HamburgerMenu />,
-      },
-    ],
   },
   {
     path: "/login",
@@ -30,6 +24,14 @@ const router = createBrowserRouter([
   {
     path: "/signup",
     element: <SignupPage />,
+  },
+  {
+    path: "/new-task",
+    element: <CreateNewTask />,
+  },
+  {
+    path: "/menu",
+    element: <HamburgerMenu />,
   },
 ]);
 

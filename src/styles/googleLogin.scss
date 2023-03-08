@@ -12,6 +12,12 @@
   font-size: 1.125rem;
   color: #000000;
 
+  &:hover {
+    background: #ebebeb;
+    color: #000000;
+    cursor: pointer;
+  }
+
   .icon-text {
     display: flex;
     align-items: center;

@@ -73,6 +73,7 @@
         font-weight: 400;
         font-size: 1rem;
         color: #000000;
+        outline: none;
       }
     }
     .login-password {
@@ -165,6 +166,11 @@
       font-weight: 600;
       font-size: 0.9375rem;
       color: #ffffff;
+
+      &:hover {
+        background: #006ce7;
+        cursor: pointer;
+      }
     }
     a {
       font-weight: 600;

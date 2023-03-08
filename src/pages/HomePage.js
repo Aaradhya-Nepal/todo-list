@@ -6,6 +6,7 @@ import NavBar from "../components/NavBar";
 import "../styles/home.scss";
 import HamburgerMenu from "../components/HamburgerMenu";
 import CreateNewTask from "../components/CreateNewTask";
+import { useNavigate } from "react-router-dom";
 
 const data = [
   {
@@ -44,11 +45,11 @@ const data = [
 ];
 
 const HomePage = () => {
-  const [showTask, setShowTask] = useState(false);
+  const navigate = useNavigate();
   return (
     <>
       <div className="main-container">
-        <NavBar />
+        <NavBar onClick={() => navigate("/menu")} />
         <div className="todo-container">
           <div className="todo-header">
             <div className="header-title">
@@ -59,7 +60,7 @@ const HomePage = () => {
               <button
                 type="button"
                 className="button"
-                onClick={() => setShowTask(!showTask)}
+                onClick={() => navigate("/new-task")}
               >
                 <div className="button-icon">
                   <IoIosAdd size={19} className="plus" />
@@ -68,7 +69,6 @@ const HomePage = () => {
               </button>
             </div>
           </div>
-          {showTask && <CreateNewTask />}
           <ul className="tasks">
             {data.map((task) => (
               <li key={task.id} className="task">
