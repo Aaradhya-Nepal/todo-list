@@ -3,6 +3,7 @@
 }
 .main-wrapper {
   position: absolute;
+  right: 320%;
 }
 .datepicker-field {
   display: flex;
@@ -29,6 +30,7 @@
   }
 }
 .calendar-container {
+  position: absolute;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -43,8 +45,6 @@
   font-size: 0.875rem;
 
   user-select: none;
-  transform: translateX(-66%);
-
   color: #333333;
 }
 .calendar-header {

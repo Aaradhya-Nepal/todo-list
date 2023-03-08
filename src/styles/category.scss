@@ -21,6 +21,7 @@
 }
 .category-container {
   position: absolute;
+  right: 1%;
 }
 .category-field {
   background: #ffffff;
@@ -31,7 +32,6 @@
   font-weight: 600;
   font-size: 0.875rem;
   color: #000000;
-  transform: translateX(-75%);
 }
 
 .category-input-field {
