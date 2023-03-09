@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { IoIosAdd } from "react-icons/io";
 import "../styles/createTask.scss";
 import Calendar from "./Calendar";
