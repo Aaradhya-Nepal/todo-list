@@ -6,7 +6,7 @@ import "../styles/signup.scss";
 const SignupPage = () => {
   return (
     <>
-      <div className="main-container">
+      <div className="signup-main-container">
         <div className="signup-container">
           <div className="signup-header">
             <div className="signup-header-title">

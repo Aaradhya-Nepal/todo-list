@@ -13,22 +13,27 @@ const NavBar = () => {
 
   return (
     <>
-      <div className="navbar">
-        <div className="navbar-menu">
-          <RxHamburgerMenu
-            size={22}
-            onClick={() => setShowHamMenu(!showHamMenu)}
-          />
-        </div>
+      {showSearch === true ? (
+        <Search />
+      ) : (
+        <div className="navbar">
+          <div className="navbar-menu">
+            <RxHamburgerMenu
+              size={22}
+              onClick={() => setShowHamMenu(!showHamMenu)}
+            />
+          </div>
 
-        <div className="navbar-actions">
-          <RiSearch2Line size={22} onClick={() => setShowSearch(!showSearch)} />
-          <RiNotification4Line size={22} />
-          <IoSettingsOutline size={22} />
+          <div className="navbar-actions">
+            <RiSearch2Line
+              size={22}
+              onClick={() => setShowSearch(!showSearch)}
+            />
+            <RiNotification4Line size={22} />
+            <IoSettingsOutline size={22} />
+          </div>
         </div>
-      </div>
-      <div>{showSearch === true ? <Search /> : null}</div>
-      <div>{showHamMenu === true ? <HamburgerMenu /> : null}</div>
+      )}
     </>
   );
 };

@@ -8,7 +8,7 @@ const LoginPage = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div className="main-container">
+      <div className="login-main-container">
         <div className="login-container">
           <div className="login-header">
             <div className="login-header-title">

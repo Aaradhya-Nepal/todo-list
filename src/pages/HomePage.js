@@ -3,8 +3,8 @@ import { IoIosAdd } from "react-icons/io";
 import { AiTwotoneStar } from "react-icons/ai";
 import { RxDotFilled } from "react-icons/rx";
 import NavBar from "../components/NavBar";
+import CreateNewTask from "../components/CreateNewTask";
 import "../styles/home.scss";
-import { useNavigate } from "react-router-dom";
 
 const data = [
   {
@@ -43,69 +43,71 @@ const data = [
 ];
 
 const HomePage = () => {
-  const navigate = useNavigate();
+  const [showCreateTask, setShowCreateTask] = useState(false);
   return (
     <>
-      <div className="main-container">
-        <NavBar />
-        <div className="todo-container">
-          <div className="todo-header">
-            <div className="header-title">
-              <p className="header-title-text">My Day</p>
-              <p className="header-title-date">December 2022</p>
-            </div>
-            <div className="header-actions">
-              <button
-                type="button"
-                className="button"
-                onClick={() => navigate("/new-task")}
+      {showCreateTask === true ? (
+        <CreateNewTask />
+      ) : (
+        <div className="home-main-container">
+          <NavBar />
+          <div className="todo-container">
+            <div className="todo-header">
+              <div className="header-title">
+                <p className="header-title-text">My Day</p>
+                <p className="header-title-date">December 2022</p>
+              </div>
+              <div
+                className="header-actions"
+                onClick={() => setShowCreateTask(true)}
               >
-                <div className="button-icon">
-                  <IoIosAdd size={19} className="plus" />
-                </div>
-                <div className="button-label">New task</div>
-              </button>
+                <button type="button" className="button">
+                  <div className="button-icon">
+                    <IoIosAdd size={19} className="plus" />
+                  </div>
+                  <div className="button-label">New task</div>
+                </button>
+              </div>
             </div>
+            <ul className="tasks">
+              {data.map((task) => (
+                <li key={task.id} className="task">
+                  <div className="task-body">
+                    <div className="task-complete">
+                      <div className="task-complete-checkbox">
+                        {/* <div className="checked"></div> */}
+                      </div>
+                    </div>
+                    <div className="task-content">
+                      <div className="task-title">{task.title}</div>
+                      <div className="task-category">
+                        <div className="task-category-title">
+                          {task.category}
+                        </div>
+                        <div className="task-category-separator">
+                          <RxDotFilled className="dot" />
+                        </div>
+                        <div className="task-subtasks-count">
+                          {task.subtasks.completed} of {task.subtasks.total}
+                        </div>
+                        <div className="task-category-separator">
+                          <RxDotFilled className="dot" />
+                        </div>
+                        <div className="task-category-date">{task.date}</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className={"task-actions " + (task.favourite && "active")}
+                  >
+                    <AiTwotoneStar />
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
-          <ul className="tasks">
-            {data.map((task) => (
-              <li key={task.id} className="task">
-                <div className="task-body">
-                  <div className="task-complete">
-                    <div className="task-complete-checkbox">
-                      {/* <div className="checked"></div> */}
-                    </div>
-                  </div>
-                  <div className="task-content">
-                    <div
-                      className="task-title"
-                      onClick={() => navigate("/edit-task")}
-                    >
-                      {task.title}
-                    </div>
-                    <div className="task-category">
-                      <div className="task-category-title">{task.category}</div>
-                      <div className="task-category-separator">
-                        <RxDotFilled className="dot" />
-                      </div>
-                      <div className="task-subtasks-count">
-                        {task.subtasks.completed} of {task.subtasks.total}
-                      </div>
-                      <div className="task-category-separator">
-                        <RxDotFilled className="dot" />
-                      </div>
-                      <div className="task-category-date">{task.date}</div>
-                    </div>
-                  </div>
-                </div>
-                <div className={"task-actions " + (task.favourite && "active")}>
-                  <AiTwotoneStar />
-                </div>
-              </li>
-            ))}
-          </ul>
         </div>
-      </div>
+      )}
     </>
   );
 };
