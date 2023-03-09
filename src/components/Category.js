@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "../styles/category.scss";
 import { TiDeleteOutline } from "react-icons/ti";
 
@@ -12,9 +12,20 @@ const Category = () => {
   const [showCategory, setShowCategory] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState({});
 
-  // useEffect(() => {
-  //   setSelectedCategory( );
-  // });
+  const categoryRef = useRef();
+
+  useEffect(() => {
+    let handler = (e) => {
+      if (!categoryRef.current.contains(e.target)) {
+        setShowCategory(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  });
 
   //show category on/off
   const handleCategory = () => {
@@ -65,7 +76,7 @@ const Category = () => {
   };
   return (
     <>
-      <div className="category-main-container">
+      <div className="category-main-container" ref={categoryRef}>
         <div
           id="display-category"
           className="display-category-field"

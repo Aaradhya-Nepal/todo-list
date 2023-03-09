@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../styles/calendar.scss";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import calendarBuilder, {
@@ -39,6 +39,8 @@ const Calendar = () => {
   const [calendarDates, setCalendarDates] = useState([]);
   const [selectedDate, setSelectedDate] = useState({});
 
+  const calendarRef = useRef();
+
   const getToday = () => {
     const d = new Date();
     return {
@@ -72,6 +74,17 @@ const Calendar = () => {
     });
     setCalendarDates(getCalendarDates(td.month, td.year));
     setSelectedDate(td);
+
+    let handler = (e) => {
+      if (!calendarRef.current.contains(e.target)) {
+        setShowCalender(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
   }, []);
 
   const handleDatepickerClick = () => {
@@ -131,7 +144,7 @@ const Calendar = () => {
 
   return (
     <>
-      <div className={"datepicker-container"}>
+      <div className={"datepicker-container"} ref={calendarRef}>
         <div className={"datepicker-field"} onClick={handleDatepickerClick}>
           {getMonthName(selectedDate.month)} {selectedDate.day},{" "}
           {selectedDate.year}
