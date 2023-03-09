@@ -5,11 +5,12 @@ import React, { useState } from "react";
 import "../styles/navbar.scss";
 import HamburgerMenu from "../components/HamburgerMenu";
 import Search from "../components/Search";
-// import HomePage from "../pages/HomePage";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
   const [showHamMenu, setShowHamMenu] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <>
@@ -18,17 +19,10 @@ const NavBar = () => {
       ) : (
         <div className="navbar">
           <div className="navbar-menu">
-            <RxHamburgerMenu
-              size={22}
-              onClick={() => setShowHamMenu(!showHamMenu)}
-            />
+            <RxHamburgerMenu size={22} onClick={() => navigate("/menu")} />
           </div>
-
           <div className="navbar-actions">
-            <RiSearch2Line
-              size={22}
-              onClick={() => setShowSearch(!showSearch)}
-            />
+            <RiSearch2Line size={22} onClick={() => setShowSearch(true)} />
             <RiNotification4Line size={22} />
             <IoSettingsOutline size={22} />
           </div>

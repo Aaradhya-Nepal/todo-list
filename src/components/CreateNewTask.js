@@ -7,10 +7,10 @@ import Category from "./Category";
 import CloseIcon from "./CloseIcon";
 
 const CreateNewTask = () => {
-  const [showHomePage, setShowHomePage] = useState(false);
+  const [showHomePageNewTask, setShowHomePageNewTask] = useState(false);
   return (
     <>
-      {showHomePage === true ? (
+      {showHomePageNewTask === true ? (
         <HomePage />
       ) : (
         <div className="create-task-main-container">
@@ -18,7 +18,7 @@ const CreateNewTask = () => {
             <div className="header-and-body-container">
               <div className="header">
                 <p>Create new task</p>
-                <div onClick={() => setShowHomePage(true)}>
+                <div onClick={() => setShowHomePageNewTask(true)}>
                   <CloseIcon />
                 </div>
               </div>

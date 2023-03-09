@@ -6,10 +6,10 @@ import "../styles/createTask.scss";
 import CloseIcon from "./CloseIcon";
 
 const EditTask = () => {
-  const [showHomePage, setShowHomePage] = useState(false);
+  const [showHomePageEditTask, setShowHomePageEditTask] = useState(false);
   return (
     <>
-      {showHomePage === true ? (
+      {showHomePageEditTask === true ? (
         <HomePage />
       ) : (
         <div className="create-task-main-container">
@@ -17,7 +17,7 @@ const EditTask = () => {
             <div className="header-and-body-container">
               <div className="header">
                 <p>Edit task</p>
-                <div onClick={() => setShowHomePage(true)}>
+                <div onClick={() => setShowHomePageEditTask(true)}>
                   <CloseIcon />
                 </div>
               </div>

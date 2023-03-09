@@ -11,11 +11,11 @@ import { useNavigate } from "react-router-dom";
 import HomePage from "../pages/HomePage";
 
 const HamburgerMenu = () => {
-  const [showHomePage, setShowHomePage] = useState(false);
+  const [showHomePageHam, setShowHomePageHam] = useState(false);
   const navigate = useNavigate();
   return (
     <>
-      {showHomePage === true ? (
+      {showHomePageHam === true ? (
         <HomePage />
       ) : (
         <div className="hamburger-main-container">
@@ -43,7 +43,7 @@ const HamburgerMenu = () => {
                   <p>List.y</p>
                 </div>
               </div>
-              <div onClick={setShowHomePage(true)}>
+              <div onClick={setShowHomePageHam(true)}>
                 <CloseIcon />
               </div>
             </div>
