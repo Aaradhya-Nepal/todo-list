@@ -4,6 +4,7 @@ import { AiTwotoneStar } from "react-icons/ai";
 import { RxDotFilled } from "react-icons/rx";
 import NavBar from "../components/NavBar";
 import CreateNewTask from "../components/CreateNewTask";
+import EditTask from "../components/EditTask";
 import "../styles/home.scss";
 
 const data = [
@@ -44,10 +45,13 @@ const data = [
 
 const HomePage = () => {
   const [showCreateTask, setShowCreateTask] = useState(false);
+  const [showEditTask, setShowEditTask] = useState(false);
   return (
     <>
       {showCreateTask === true ? (
         <CreateNewTask />
+      ) : showEditTask === true ? (
+        <EditTask />
       ) : (
         <div className="home-main-container">
           <NavBar />
@@ -79,7 +83,12 @@ const HomePage = () => {
                       </div>
                     </div>
                     <div className="task-content">
-                      <div className="task-title">{task.title}</div>
+                      <div
+                        className="task-title"
+                        onClick={() => setShowEditTask(true)}
+                      >
+                        {task.title}
+                      </div>
                       <div className="task-category">
                         <div className="task-category-title">
                           {task.category}
