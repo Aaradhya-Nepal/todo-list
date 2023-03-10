@@ -3,23 +3,19 @@ import { RiNotification4Line, RiSearch2Line } from "react-icons/ri";
 import { IoSettingsOutline } from "react-icons/io5";
 import React, { useState } from "react";
 import "../styles/navbar.scss";
-import HamburgerMenu from "../components/HamburgerMenu";
 import Search from "../components/Search";
 
 const NavBar = () => {
-  const [showHamMenu, setShowHamMenu] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
 
   return (
     <>
       {showSearch === true ? (
         <Search />
-      ) : showHamMenu === true ? (
-        <HamburgerMenu />
       ) : (
         <div className="navbar">
           <div className="navbar-menu">
-            <RxHamburgerMenu size={22} onClick={() => setShowHamMenu(true)} />
+            <RxHamburgerMenu size={22} />
           </div>
           <div className="navbar-actions">
             <RiSearch2Line size={22} onClick={() => setShowSearch(true)} />

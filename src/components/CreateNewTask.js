@@ -10,7 +10,7 @@ const CreateNewTask = () => {
   const [showHomePageNewTask, setShowHomePageNewTask] = useState(false);
   return (
     <>
-      {showHomePageNewTask === true ? (
+      {showHomePageNewTask ? (
         <HomePage />
       ) : (
         <div className="create-task-main-container">

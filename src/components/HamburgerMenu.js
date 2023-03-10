@@ -38,7 +38,7 @@ const HamburgerMenu = () => {
                 <p>List.y</p>
               </div>
             </div>
-            <div onClick={setShowHomePageHam(true)}>
+            <div>
               <CloseIcon />
             </div>
           </div>

@@ -9,7 +9,7 @@ const EditTask = () => {
   const [showHomePageEditTask, setShowHomePageEditTask] = useState(false);
   return (
     <>
-      {showHomePageEditTask === true ? (
+      {showHomePageEditTask ? (
         <HomePage />
       ) : (
         <div className="create-task-main-container">
