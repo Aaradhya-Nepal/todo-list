@@ -114,20 +114,26 @@
   background-color: #e2e2e2;
 }
 .today {
+  border: 2px solid #e4f1ff;
+  border-radius: 4px;
+  border-width: 1px;
+  background-color: #fff;
+  color: #027aff;
+
+  &:hover {
+    border: 2px solid #e4f1ff;
+    border-radius: 4px;
+    border-width: 1px;
+    background-color: #fff;
+    color: #027aff;
+  }
+}
+.selected-date {
   background-color: #027aff;
   color: #fff;
 
   &:hover {
     background-color: #027aff;
-    color: #fff;
-  }
-}
-.selected-date {
-  background-color: green;
-  color: #fff;
-
-  &:hover {
-    background-color: green;
     color: #fff;
   }
 }
